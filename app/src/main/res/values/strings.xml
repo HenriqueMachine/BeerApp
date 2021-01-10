@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BeerApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_title_beer_menu">Beer Menu</string>
+    <string name="label_alcohol_average">Alcohol average</string>
+    <string name="label_alcohol_average_medium">Medium (5~10%)</string>
+    <string name="label_alcohol_average_high">High(10%~)</string>
+    <string name="label_alcohol_average_low">Low (0~5%)</string>
+</resources>

@@ -1,0 +1,216 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:background="@color/grayColor"
+    tools:context="br.com.henrique.features.beerdetail.BeerDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:background="@drawable/shape_corner_bottom"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewImageBeerDetail"
+            android:layout_width="@dimen/dimenOf200dp"
+            android:layout_height="@dimen/dimenOf300dp"
+            android:layout_marginTop="@dimen/dimenOf36dp"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toTopOf="@id/guideTop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/grayColor"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toTopOf="@id/guideTop"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNameBeerDetail"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimenOf16dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/AppName"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf24sp"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/imageViewImageBeerDetail" />
+
+        <View
+            android:id="@+id/viewIdentifierAlcohol"
+            android:layout_width="@dimen/dimenOf8dp"
+            android:layout_height="@dimen/dimenOf36dp"
+            android:layout_marginEnd="@dimen/dimenOf4dp"
+            android:background="@drawable/shape_corner_all"
+            android:backgroundTint="@color/alcoholColor"
+            app:layout_constraintEnd_toStartOf="@+id/textViewAlcoholBeerDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/textViewAlcoholBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAlcoholBeerDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimenOf16dp"
+            android:fontFamily="sans-serif"
+            android:text="Alcohol"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf14sp"
+            app:layout_constraintEnd_toStartOf="@id/textViewTagLineBeerDetailTitle"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/textViewNameBeerDetail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAlcoholBeerDetailContent"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/AppName"
+            android:textColor="@color/grayColor"
+            android:maxLines="1"
+            android:textSize="@dimen/dimenOf14sp"
+            app:layout_constraintEnd_toStartOf="@id/viewIdentifierTagLine"
+            android:layout_marginEnd="@dimen/dimenOf8dp"
+            app:layout_constraintStart_toStartOf="@id/textViewAlcoholBeerDetailTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewAlcoholBeerDetailTitle" />
+
+        <View
+            android:id="@+id/viewIdentifierTagLine"
+            android:layout_width="@dimen/dimenOf8dp"
+            android:layout_height="@dimen/dimenOf36dp"
+            android:layout_marginEnd="@dimen/dimenOf4dp"
+            android:background="@drawable/shape_corner_all"
+            android:backgroundTint="@color/tagLineColor"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewTagLineBeerDetailContent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewTagLineBeerDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/textViewTagLineBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTagLineBeerDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="Tagline"
+            android:layout_marginHorizontal="@dimen/dimenOf50dp"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf14sp"
+            app:layout_constraintEnd_toStartOf="@id/textViewBitternessScaleBeerDetailTitle"
+            app:layout_constraintStart_toEndOf="@id/textViewAlcoholBeerDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/textViewAlcoholBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTagLineBeerDetailContent"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/AppName"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf14sp"
+            android:maxLines="1"
+            android:layout_marginEnd="@dimen/dimenOf8dp"
+            app:layout_constraintStart_toStartOf="@id/textViewTagLineBeerDetailTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewTagLineBeerDetailTitle"
+            app:layout_constraintEnd_toStartOf="@id/viewIdentifierBitterness"/>
+
+        <View
+            android:id="@+id/viewIdentifierBitterness"
+            android:layout_width="@dimen/dimenOf8dp"
+            android:layout_height="@dimen/dimenOf36dp"
+            android:layout_marginEnd="@dimen/dimenOf4dp"
+            android:background="@drawable/shape_corner_all"
+            android:backgroundTint="@color/bitternessColor"
+            app:layout_constraintEnd_toStartOf="@+id/textViewBitternessScaleBeerDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/textViewBitternessScaleBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewBitternessScaleBeerDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Bitterness Scale"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/textViewTagLineBeerDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/textViewAlcoholBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewBitternessScaleBeerDetailContent"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_marginEnd="@dimen/dimenOf8dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/AppName"
+            android:textColor="@color/grayColor"
+            android:textSize="@dimen/dimenOf14sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/textViewBitternessScaleBeerDetailTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewBitternessScaleBeerDetailTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDescriptionBeerTitle"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimenOf16dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@color/backgroundColor"
+            android:textSize="@dimen/dimenOf24sp"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/viewTop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDescriptionBeerContent"
+            android:layout_width="@dimen/dimenOf0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/AppName"
+            android:textColor="@color/backgroundColor"
+            android:layout_marginTop="@dimen/dimenOf8dp"
+            android:letterSpacing="0.03"
+            android:textSize="@dimen/dimenOf16sp"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/textViewDescriptionBeerTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

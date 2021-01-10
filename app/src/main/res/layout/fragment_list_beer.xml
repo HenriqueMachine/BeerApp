@@ -1,0 +1,146 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="br.com.henrique.features.beerlist.ui.ListBeerFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMenuTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimenOf16dp"
+        android:layout_marginTop="@dimen/dimenOf16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/label_title_beer_menu"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/dimenOf24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewCorner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimenOf0dp"
+        android:layout_marginTop="@dimen/dimenOf120dp"
+        android:background="@drawable/shape_corner_top"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewListBeer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimenOf0dp"
+        android:layout_marginHorizontal="@dimen/dimenOf16dp"
+        android:layout_marginTop="@dimen/dimenOf16dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewCorner"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_beer_list" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/grayColor"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAlcoholAverage"
+        app:layout_constraintTop_toTopOf="@id/textViewAlcoholAverage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAlcoholAverage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimenOf16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="@dimen/dimenOf2dp"
+        android:text="@string/label_alcohol_average"
+        android:textColor="@color/backgroundColor"
+        android:textSize="@dimen/dimenOf14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMenuTitle" />
+
+    <View
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="@dimen/dimenOf0dp"
+        android:background="@drawable/shape_corner_top_right_bottom_left"
+        android:backgroundTint="@color/greenAverageColor"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAlcoholAverageLow"
+        app:layout_constraintEnd_toEndOf="@id/textViewAlcoholAverageLow"
+        app:layout_constraintStart_toStartOf="@id/textViewAlcoholAverageLow"
+        app:layout_constraintTop_toTopOf="@id/textViewAlcoholAverageLow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAlcoholAverageLow"
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimenOf16dp"
+        android:layout_marginTop="@dimen/dimenOf8dp"
+        android:layout_marginEnd="@dimen/dimenOf16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="@dimen/dimenOf4dp"
+        android:text="@string/label_alcohol_average_low"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/dimenOf12sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAlcoholAverageMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAlcoholAverage" />
+
+    <View
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="@dimen/dimenOf0dp"
+        android:background="@drawable/shape_corner_top_right_bottom_left"
+        android:backgroundTint="@color/orangeAverageColor"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAlcoholAverageMedium"
+        app:layout_constraintEnd_toEndOf="@id/textViewAlcoholAverageMedium"
+        app:layout_constraintStart_toStartOf="@id/textViewAlcoholAverageMedium"
+        app:layout_constraintTop_toTopOf="@id/textViewAlcoholAverageMedium" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAlcoholAverageMedium"
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimenOf8dp"
+        android:layout_marginEnd="@dimen/dimenOf16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="@dimen/dimenOf4dp"
+        android:text="@string/label_alcohol_average_medium"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/dimenOf12sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAlcoholAverageHigh"
+        app:layout_constraintStart_toEndOf="@+id/textViewAlcoholAverageLow"
+        app:layout_constraintTop_toBottomOf="@id/textViewAlcoholAverage" />
+
+    <View
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="@dimen/dimenOf0dp"
+        android:background="@drawable/shape_corner_top_right_bottom_left"
+        android:backgroundTint="@color/redAverageColor"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAlcoholAverageHigh"
+        app:layout_constraintEnd_toEndOf="@id/textViewAlcoholAverageHigh"
+        app:layout_constraintStart_toStartOf="@id/textViewAlcoholAverageHigh"
+        app:layout_constraintTop_toTopOf="@id/textViewAlcoholAverageHigh" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAlcoholAverageHigh"
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimenOf8dp"
+        android:layout_marginEnd="@dimen/dimenOf16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="@dimen/dimenOf4dp"
+        android:text="@string/label_alcohol_average_high"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/dimenOf12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewAlcoholAverageMedium"
+        app:layout_constraintTop_toBottomOf="@id/textViewAlcoholAverage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/beer_nav_graph"
+	app:startDestination="@id/BeerListFragment">
+
+<fragment
+	android:id="@+id/BeerListFragment"
+	android:name="br.com.henrique.features.beerlist.ui.ListBeerFragment"
+	android:label="BeerList"
+	tools:layout="@layout/fragment_list_beer">
+	<action
+		android:id="@+id/action_BeerListFragment_to_BeerDetailFragment"
+		app:destination="@id/BeerDetailFragment"
+		app:enterAnim="@anim/slide_enter_from_right"
+		app:exitAnim="@anim/slide_exit_to_left"
+		app:popEnterAnim="@anim/slide_enter_from_left"
+		app:popExitAnim="@anim/slide_exit_to_right"/>
+</fragment>
+
+	<fragment
+		android:id="@+id/BeerDetailFragment"
+		android:name="br.com.henrique.features.beerdetail.BeerDetailFragment"
+		android:label="BeerDetail"
+		tools:layout="@layout/fragment_beer_detail"/>
+
+</navigation>
